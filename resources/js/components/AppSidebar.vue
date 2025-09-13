@@ -70,13 +70,7 @@ const userMenuItems = computed(() => [
                 <li>
                     <ul role="list" class="-mx-2 space-y-1">
                         <li v-for="item in mainNavItems" :key="item.label">
-                            <UButton
-                                :to="item.to"
-                                variant="ghost"
-                                color="gray"
-                                class="w-full justify-start"
-                                :icon="item.icon"
-                            >
+                            <UButton :to="item.to" variant="ghost" color="gray" class="w-full justify-start" :icon="item.icon">
                                 {{ item.label }}
                             </UButton>
                         </li>
@@ -104,10 +98,7 @@ const userMenuItems = computed(() => [
                             color="gray"
                             class="relative mt-4 w-full justify-start p-1 focus-within:ring-2 focus-within:ring-primary"
                         >
-                            <UAvatar
-                                :src="auth.user.avatar"
-                                :alt="auth.user.name"
-                            >
+                            <UAvatar :src="auth.user.avatar" :alt="auth.user.name">
                                 <UAvatar
                                     :alt="getInitials(auth.user?.name)"
                                     class="rounded-lg bg-neutral-200 font-semibold text-black dark:bg-neutral-700 dark:text-white"
@@ -115,7 +106,7 @@ const userMenuItems = computed(() => [
                             </UAvatar>
                             <span class="ml-2 text-sm font-semibold">{{ auth.user.name }}</span>
                         </UButton>
-                        <template #account="{ item }">
+                        <template #account>
                             <div class="text-left">
                                 <p>Signed in as</p>
                                 <p class="truncate font-medium text-gray-900 dark:text-white">

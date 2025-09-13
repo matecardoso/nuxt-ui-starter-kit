@@ -61,7 +61,7 @@ const codeValue = computed<string>(() => code.value.join(''));
                         <InputError :message="errors.code" />
                     </div>
                     <Button type="submit" class="w-full" :disabled="processing">Continue</Button>
-                    <div class="text-center text-sm text-muted-foreground">
+                    <div class="text-muted-foreground text-center text-sm">
                         <span>or you can </span>
                         <button
                             type="button"
@@ -80,7 +80,7 @@ const codeValue = computed<string>(() => code.value.join(''));
                     <InputError :message="errors.recovery_code" />
                     <Button type="submit" class="w-full" :disabled="processing">Continue</Button>
 
-                    <div class="text-center text-sm text-muted-foreground">
+                    <div class="text-muted-foreground text-center text-sm">
                         <span>or you can </span>
                         <button
                             type="button"

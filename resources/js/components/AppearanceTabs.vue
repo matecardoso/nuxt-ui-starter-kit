@@ -15,13 +15,8 @@ const onTabChange = (index: number) => {
 </script>
 
 <template>
-    <UTabs
-        :model-value="items.findIndex((item) => item.key === appearance)"
-        @update:model-value="onTabChange"
-        :items="items"
-        class="w-full"
-    >
-        <template #default="{ item, index, selected }">
+    <UTabs :model-value="items.findIndex((item) => item.key === appearance)" @update:model-value="onTabChange" :items="items" class="w-full">
+        <template #default="{ item, selected }">
             <div
                 class="relative flex items-center gap-2 truncate"
                 :class="[selected ? 'text-primary' : 'text-gray-500 dark:text-gray-400', 'group-hover:text-primary']"
