@@ -68,7 +68,9 @@ const isModalOpen = ref(false);
                                 Cancel
                             </UButton>
 
-                            <UButton type="submit" color="red" :disabled="processing" data-test="confirm-delete-user-button"> Delete account </UButton>
+                            <UButton type="submit" color="red" :disabled="processing" data-test="confirm-delete-user-button">
+                                Delete account
+                            </UButton>
                         </div>
                     </Form>
                 </div>

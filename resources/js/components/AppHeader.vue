@@ -3,11 +3,11 @@ import AppLogo from '@/components/AppLogo.vue';
 import AppLogoIcon from '@/components/AppLogoIcon.vue';
 import Breadcrumbs from '@/components/Breadcrumbs.vue';
 import { getInitials } from '@/composables/useInitials';
-import { toUrl, urlIsActive } from '@/lib/utils';
+import { toUrl } from '@/lib/utils';
 import { dashboard, logout } from '@/routes';
 import { edit } from '@/routes/profile';
 import type { BreadcrumbItem, NavItem } from '@/types';
-import { InertiaLinkProps, Link, router, usePage } from '@inertiajs/vue3';
+import { Link, router, usePage } from '@inertiajs/vue3';
 import { computed, ref } from 'vue';
 
 interface Props {
@@ -21,8 +21,6 @@ const props = withDefaults(defineProps<Props>(), {
 const page = usePage();
 const auth = computed(() => page.props.auth);
 const isMobileMenuOpen = ref(false);
-
-const isCurrentRoute = computed(() => (url: NonNullable<InertiaLinkProps['href']>) => urlIsActive(url, page.url));
 
 const mainNavItems: NavItem[] = [
     {
@@ -80,13 +78,7 @@ const userMenuItems = computed(() => [
             <div class="mx-auto flex h-16 items-center px-4 md:max-w-7xl">
                 <!-- Mobile Menu -->
                 <div class="lg:hidden">
-                    <UButton
-                        variant="ghost"
-                        color="gray"
-                        icon="i-lucide-menu"
-                        class="mr-2"
-                        @click="isMobileMenuOpen = true"
-                    />
+                    <UButton variant="ghost" color="gray" icon="i-lucide-menu" class="mr-2" @click="isMobileMenuOpen = true" />
 
                     <USlideover v-model="isMobileMenuOpen">
                         <div class="p-6">
@@ -162,17 +154,14 @@ const userMenuItems = computed(() => [
                             color="gray"
                             class="relative size-10 w-auto rounded-full p-1 focus-within:ring-2 focus-within:ring-primary"
                         >
-                            <UAvatar
-                                :src="auth.user.avatar"
-                                :alt="auth.user.name"
-                            >
+                            <UAvatar :src="auth.user.avatar" :alt="auth.user.name">
                                 <UAvatar
                                     :alt="getInitials(auth.user?.name)"
                                     class="rounded-lg bg-neutral-200 font-semibold text-black dark:bg-neutral-700 dark:text-white"
                                 />
                             </UAvatar>
                         </UButton>
-                        <template #account="{ item }">
+                        <template #account>
                             <div class="text-left">
                                 <p>Signed in as</p>
                                 <p class="truncate font-medium text-gray-900 dark:text-white">
