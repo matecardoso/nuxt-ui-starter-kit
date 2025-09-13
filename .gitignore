@@ -16,6 +16,8 @@
 .env.production
 .phpactor.json
 .phpunit.result.cache
+auto-imports.d.ts
+components.d.ts
 Homestead.json
 Homestead.yaml
 npm-debug.log

@@ -43,6 +43,8 @@
         @inertiaHead
     </head>
     <body class="font-sans antialiased">
-        @inertia
+        <div id="app" class="isolate">
+            @inertia
+        </div>
     </body>
 </html>
