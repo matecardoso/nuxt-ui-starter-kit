@@ -1,0 +1,129 @@
+{
+  "name": "laravel-vue-starter-kit",
+  "version": "1.0.0",
+  "description": "Model Context Protocol configuration for Laravel + Vue starter kit",
+  "servers": {
+    "filesystem": {
+      "command": "npx",
+      "args": ["@modelcontextprotocol/server-filesystem", "/home/runner/work/nuxt-ui-starter-kit/nuxt-ui-starter-kit"],
+      "env": {
+        "NODE_ENV": "development"
+      }
+    }
+  },
+  "tools": [
+    {
+      "name": "read_file",
+      "description": "Read file contents",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "description": "File path to read"
+          }
+        },
+        "required": ["path"]
+      }
+    },
+    {
+      "name": "write_file",
+      "description": "Write file contents",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "description": "File path to write"
+          },
+          "content": {
+            "type": "string",
+            "description": "Content to write to file"
+          }
+        },
+        "required": ["path", "content"]
+      }
+    },
+    {
+      "name": "list_files",
+      "description": "List files in directory",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "description": "Directory path to list"
+          }
+        },
+        "required": ["path"]
+      }
+    }
+  ],
+  "prompts": [
+    {
+      "name": "project_overview",
+      "description": "Get an overview of the Laravel + Vue starter kit project",
+      "arguments": [
+        {
+          "name": "focus_area",
+          "description": "Area to focus on (frontend, backend, auth, components)",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "component_analysis",
+      "description": "Analyze Vue components and their structure",
+      "arguments": [
+        {
+          "name": "component_path",
+          "description": "Path to specific component to analyze",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "api_endpoints",
+      "description": "List and describe Laravel API endpoints",
+      "arguments": [
+        {
+          "name": "route_prefix",
+          "description": "Filter routes by prefix",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "resources": [
+    {
+      "uri": "file://llms.txt",
+      "name": "Project Context",
+      "description": "Comprehensive project documentation for AI agents",
+      "mimeType": "text/plain"
+    },
+    {
+      "uri": "file://AGENTS.md",
+      "name": "Agent Guidelines",
+      "description": "Guidelines and best practices for AI agents working on this project",
+      "mimeType": "text/markdown"
+    },
+    {
+      "uri": "file://README.md",
+      "name": "Project README",
+      "description": "Project introduction and setup instructions",
+      "mimeType": "text/markdown"
+    },
+    {
+      "uri": "file://package.json",
+      "name": "Package Configuration",
+      "description": "NPM package configuration and scripts",
+      "mimeType": "application/json"
+    },
+    {
+      "uri": "file://composer.json",
+      "name": "Composer Configuration",
+      "description": "PHP package configuration and dependencies",
+      "mimeType": "application/json"
+    }
+  ]
+}

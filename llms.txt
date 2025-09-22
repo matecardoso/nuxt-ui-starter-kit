@@ -1,0 +1,60 @@
+# Laravel + Vue Starter Kit - LLM Context
+
+This is a Laravel + Vue.js starter kit using Inertia.js for building modern single-page applications.
+
+## Tech Stack
+- **Backend**: Laravel (PHP framework)
+- **Frontend**: Vue 3 with Composition API
+- **Build Tool**: Vite
+- **CSS**: Tailwind CSS 4.x
+- **Components**: shadcn-vue (Radix UI for Vue)
+- **UI Icons**: Lucide Vue Next
+- **Language**: TypeScript
+- **State Management**: Vue Composition API with Inertia.js
+- **Authentication**: Laravel Fortify (with 2FA support)
+
+## Project Structure
+- `app/` - Laravel application code (Models, Controllers, etc.)
+- `resources/js/` - Vue.js frontend code
+- `resources/js/pages/` - Inertia.js pages
+- `resources/js/components/` - Vue components
+- `resources/js/components/ui/` - shadcn-vue UI components
+- `resources/js/layouts/` - Layout components
+- `resources/js/composables/` - Vue composables
+- `resources/css/` - Stylesheets
+- `routes/` - Laravel route definitions
+- `config/` - Laravel configuration files
+
+## Key Features
+- Server-side rendering (SSR) with Inertia.js
+- Dark/light mode theming
+- Two-factor authentication
+- Modern Vue 3 + TypeScript development
+- Tailwind CSS for styling
+- Component library with shadcn-vue
+
+## Development Commands
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run lint` - Run ESLint
+- `npm run format` - Format code with Prettier
+- `composer install` - Install PHP dependencies
+- `php artisan serve` - Start Laravel development server
+
+## Architecture Notes
+- Uses Inertia.js for seamless SPA experience with Laravel backend
+- Vue components are located in resources/js/components/
+- Pages are automatically registered via Inertia's page resolver
+- Authentication handled by Laravel Fortify
+- UI components follow shadcn-vue patterns
+
+## Code Style
+- TypeScript for type safety
+- Vue 3 Composition API
+- ESLint + Prettier for code formatting
+- Tailwind CSS for styling
+- Single File Components (.vue files)
+
+## Testing
+- PHPUnit for backend testing
+- No frontend testing framework currently configured
